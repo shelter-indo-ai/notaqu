@@ -1,0 +1,134 @@
+:root{
+  --navy-950:#020b2e;
+  --navy-900:#07164a;
+  --navy-800:#0b2a76;
+  --ink:#0b1220;
+  --muted:#6b7280;
+  --card:#ffffff;
+  --line:rgba(255,255,255,.14);
+  --shadow:0 16px 40px rgba(0,0,0,.22);
+  --radius:16px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  color:var(--ink);
+  background:
+    radial-gradient(900px 500px at 20% 0%, rgba(43,91,255,.18), transparent 55%),
+    linear-gradient(180deg, var(--navy-950), #050a1b 65%, #070b16);
+}
+
+a{color:inherit;text-decoration:none}
+.container{
+  width:min(1080px, calc(100% - 40px));
+  margin:0 auto;
+}
+
+/* NAVBAR */
+.nav{
+  position:sticky;
+  top:0;
+  z-index:50;
+  backdrop-filter:blur(8px);
+  background:rgba(2,11,46,.85);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 0;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.brand img{
+  height:36px;
+}
+.brand span{
+  color:#fff;
+  font-weight:800;
+  letter-spacing:.2px;
+}
+
+.nav-links{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.nav-links a{
+  padding:8px 14px;
+  border-radius:999px;
+  font-size:14px;
+  font-weight:600;
+  color:#fff;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.06);
+}
+.nav-links a.active{
+  background:rgba(255,255,255,.16);
+}
+
+/* HEADER SECTION (NO IMAGE) */
+.header{
+  padding:56px 0 24px;
+}
+.header h1{
+  color:#fff;
+  font-size:34px;
+  margin:0 0 10px;
+}
+.header p{
+  color:rgba(255,255,255,.75);
+  max-width:720px;
+  line-height:1.6;
+}
+
+/* MAIN CONTENT */
+.main{
+  padding:24px 0 60px;
+}
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:28px;
+}
+.card h2{
+  margin-top:0;
+}
+.meta{
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:16px;
+}
+.content{
+  line-height:1.75;
+  font-size:15px;
+}
+.content h3{
+  margin-top:22px;
+}
+.content ul{
+  margin-left:18px;
+}
+.content li{
+  margin:6px 0;
+}
+
+/* FOOTER */
+.footer{
+  border-top:1px solid var(--line);
+  padding:26px 0;
+  color:rgba(255,255,255,.6);
+  font-size:13px;
+}
+
+@media(max-width:720px){
+  .header h1{font-size:26px}
+  .brand span{display:none}
+}
